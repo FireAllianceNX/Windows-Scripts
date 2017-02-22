@@ -38,8 +38,8 @@ if (Test-Path "$env:USERPROFILE\AppData\LocalLow\Sun\Java\Deployment") {
 
     # If list exists, check if server already exists, if not, add it
     if (Test-Path $whitelist) {
-        
-        
+
+
 	    # Check list for URLs
         if ($server1) {
             $server1_whitelist_check = Select-String -Path $whitelist -Pattern $server1
