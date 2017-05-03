@@ -22,8 +22,14 @@ $ExceptionPath="$env:UserProfile\AppData\LocalLow\Sun\Java\Deployment\security\e
 # If the exception file does not exists, create and add all sites.
 # Otherwise check existing sites, if there's no match, append them.
 If (!(Test-Path $ExceptionPath)) {
-  $site1 > $ExceptionPath
-  $site2 >> $ExceptionPath
+  New-Item -Path $ExceptionPath -ItemType file | Out-Null
+  # Run a check in case only one site is needed.
+  If ($site1) {
+    $site1 >> $ExceptionPath
+  }
+  If ($site2) {
+    $site2 >> $ExceptionPath
+  }
 }
 Else {
   # Sanity check for new line at the end of the file
