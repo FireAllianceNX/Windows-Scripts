@@ -17,7 +17,13 @@ $site2 = "https://secure.server.com"
 
 # Actual work - Do not edit below
 # Setup path
+$SecurityPath="$env:UserProfile\AppData\LocalLow\Sun\Java\Deployment\security\"
 $ExceptionPath="$env:UserProfile\AppData\LocalLow\Sun\Java\Deployment\security\exception.sites"
+
+# Make sure that the security folder was created after Java got installed, if not, we can create it.
+If (!(Test-Path $SecurityPath)) {
+  New-Item -Path $SecurityPath -ItemType directory | Out-Null
+}
 
 # If the exception file does not exists, create and add all sites.
 # Otherwise check existing sites, if there's no match, append them.

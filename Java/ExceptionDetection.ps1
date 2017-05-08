@@ -1,6 +1,6 @@
 # Detection Method to check if exception.sites was updated with our script
 
-$OurPath="$env:USERPROFILE\LocalLow\Sun\Java\Deployment\security\exception.sites"
+$OurPath="$env:USERPROFILE\AppData\LocalLow\Sun\Java\Deployment\security\exception.sites"
 If (Test-Path $OurPath) {
   $OurFile=Get-ChildItem $OurPath
   $filedate=$OurFile.LastWriteTime
