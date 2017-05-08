@@ -8,8 +8,9 @@
 # Credits: https://derflounder.wordpress.com/2014/01/16/managing-oracles-java-exception-site-list/
 #
 # Leon Chung
-# Created: 2017-02-11
-# Modified: 2017-05-03
+# Created: 2017.02.11
+# Modified: 2017.05.03 - Re-ordered logic
+# 2017.05.08 - Removed always exit 0, added folder detection/creation
 
 # Server addresses - EDIT THESE
 $site1 = "http://your.server.com"
@@ -22,7 +23,7 @@ $ExceptionPath="$env:UserProfile\AppData\LocalLow\Sun\Java\Deployment\security\e
 
 # Make sure that the security folder was created after Java got installed, if not, we can create it.
 If (!(Test-Path $SecurityPath)) {
-  New-Item -Path $SecurityPath -ItemType directory | Out-Null
+  New-Item $SecurityPath -ItemType directory | Out-Null
 }
 
 # If the exception file does not exists, create and add all sites.
