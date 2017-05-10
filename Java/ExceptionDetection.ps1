@@ -10,11 +10,9 @@ If (Test-Path $OurPath) {
     exit 0
   }
   Else {
-    Write-Error "File exists but date was older"
-    exit 1
+    exit 0
   }
 }
 Else {
-  Write-Error "File is missing"
-  exit 1
+  exit 0
 }
