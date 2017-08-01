@@ -1,0 +1,1 @@
+Import-StartLayout -LayoutPath $PSScriptRoot\StartMenu.xml -MountPath $env:SystemDrive\

@@ -7,7 +7,7 @@
 # is set to be null.
 # Credits: https://derflounder.wordpress.com/2014/01/16/managing-oracles-java-exception-site-list/
 #
-# Leon Chung
+# Leon Chung | leonc@nyu.edu
 # Created: 2017.02.11
 # Modified: 2017.05.03 - Re-ordered logic
 # 2017.05.08 - Removed always exit 0, added folder detection/creation
