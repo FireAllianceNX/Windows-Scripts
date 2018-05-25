@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<migration urlid="http://www.microsoft.com/migration/externalUserDocs">
+   <component type="Documents" context="User">
+      <displayName>Exclude Dropbox</displayName>
+      <role role="Data">
+         <rules>
+            <unconditionalExclude>
+               <objectSet>
+                  <pattern type="File">%CSIDL_PROFILE%\Dropbox\* [*]</pattern>
+                  <pattern type="File">%CSIDL_PROFILE%\Dropbox (Work)\* [*]</pattern>
+                  <pattern type="File">%CSIDL_PROFILE%\Dropbox (Personal)\* [*]</pattern>
+                  <pattern type="File">%CSIDL_LOCAL_APPDATA%\Dropbox\* [*]</pattern>
+               </objectSet>
+            </unconditionalExclude>
+         </rules>
+      </role>
+   </component>
+</migration>
